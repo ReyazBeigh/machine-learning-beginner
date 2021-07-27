@@ -1,3 +1,4 @@
+from numpy import empty
 import pandas as pd
 
 from sklearn.tree import DecisionTreeRegressor
@@ -34,13 +35,19 @@ X = data[features]
 train_X, val_X, train_y,val_y =  train_test_split(X,y,random_state=0)    
 
 leaves = [5,50,500,600,5000]
+optimal_tree_size = leaves[0]
+temp_mae = None
 for leaf in leaves:
     mae = get_mea(leaf,train_X,val_X,train_y,val_y)
     print("For Leaf nodes ",leaf," MAE is ",mae)
+    if temp_mae == None or temp_mae > mae:
+        temp_mae = mae
+        optimal_tree_size = leaf
 
-model = DecisionTreeRegressor() #Define model 
 
-fit = model.fit(train_X, train_y) #fit the model
+model = DecisionTreeRegressor(max_leaf_nodes=optimal_tree_size,random_state=0) #Define model 
+
+fit = model.fit(X, y) #fit the model
 
 #print(fit) #print the model
 
