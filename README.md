@@ -1,4 +1,4 @@
-# machine-learning
+# Basics of Machine Learning
 
 - Basics of machine learning, understading the decision tree, tree defth, leaf nodes 
 - Loading csv data using Panda, understanding data using describe and head methods of panda 
@@ -7,6 +7,6 @@
 - Underfitting and overfitting concepts based on Shallow and Deep trees respectively. In underfitting we ignore a lot of features while in overfitting the issue is we have large splits that results in less number of records to predict 
 - Introduction to Random Forest (RandomForestRegressor) to overcomes the problem of underfitting and overfitting resulting in better model selection. Provided by sklearn lib. itself 
 
-## While Choosing a better model can be quite a task, There are Google and AWS services that offer AutoML that decide the better models automatically and we just use them for predection pretty straight forward. 
+### While Choosing a better model can be quite a task, There are Google and AWS services that offer AutoML that decide the better models automatically and we just use them for predection pretty straight forward. 
 
 ### Stay Tuned to Lean more concepts quickly!
