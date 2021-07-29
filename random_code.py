@@ -7,6 +7,7 @@ from sklearn.metrics import mean_absolute_error
 
 from sklearn.model_selection import train_test_split
 
+from sklearn.ensemble import RandomForestRegressor
 
 def get_mea(max_leaf_nodes,train_X,value_X,train_y,value_y):
     model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes,random_state=0)
@@ -37,6 +38,8 @@ train_X, val_X, train_y,val_y =  train_test_split(X,y,random_state=0)
 leaves = [5,50,500,600,5000]
 optimal_tree_size = leaves[0]
 temp_mae = None
+
+print("Chooing Correct Number of Leaf nodes ")
 for leaf in leaves:
     mae = get_mea(leaf,train_X,val_X,train_y,val_y)
     print("For Leaf nodes ",leaf," MAE is ",mae)
@@ -63,5 +66,11 @@ mean_absolute_error = mean_absolute_error(val_y, predection)
 print("mean_absolute_error is ")
 print(mean_absolute_error) #print the mean absolute error
 
-print("Chooing Correct Number of Leaf nodes ")
+print("Random Forests")
+forest_model = RandomForestRegressor(random_state=1)
+forest_model.fit(train_X,train_y)
+prediction_forest = forest_model.predict(val_X)
 
+mean_absolute_error = mean_absolute_error(val_y, prediction_forest)
+
+print("Predection is %d and Mean absolute Error is %d",prediction_forest,mean_absolute_error)
