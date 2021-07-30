@@ -1,4 +1,4 @@
-import define_model_2 as model_def
+import a2_define_model as model_def
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error
@@ -11,7 +11,7 @@ mlb_model.fit(train_X,train_y)
 
 real_prediction = mlb_model.predict(test_X)
 
-print("MEA known data to see how good is our model")
+print("MEA after splitting our data into training and testing sets")
 
 
 print(mean_absolute_error(test_y,real_prediction))

@@ -1,12 +1,12 @@
-import load_data_1
+import a1_load_data
 
 from sklearn.tree import DecisionTreeRegressor
 
-y = load_data_1.melb_data.Price
+y = a1_load_data.melb_data.Price
 
 features = ['Rooms', 'Bathroom', 'Landsize', 'Lattitude', 'Longtitude']
 
-X = load_data_1.melb_data[features]
+X = a1_load_data.melb_data[features]
 
 mlb_model = DecisionTreeRegressor(random_state=0)
 
