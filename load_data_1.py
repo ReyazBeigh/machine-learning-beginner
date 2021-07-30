@@ -5,3 +5,5 @@ melb_data = pd.read_csv(csv_path)
 
 #print(melb_data.describe())
 #print(melb_data.head())
+
+print(__file__ + " DONE ")
